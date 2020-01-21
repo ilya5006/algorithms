@@ -24,7 +24,7 @@ for (let i = maxSubsetInt; i >= 1; i--)
 
     for (let currentBinaryDigitIndex = 0; currentBinaryDigitIndex < maxSubsetBinary.length; currentBinaryDigitIndex++)
     {
-        if (currentSubsetBinary[currentBinaryDigitIndex] == 1)
+        if (currentSubsetBinary[currentBinaryDigitIndex] == '1')
         {
             subset = subset + arr[currentBinaryDigitIndex] + ', ';
         }
