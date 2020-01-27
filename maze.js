@@ -9,6 +9,8 @@ let printMaze = () =>
     
         process.stdout.write('\n');
     }
+
+    process.stdout.write('\n------\n');
 }
 
 let maze = [];
@@ -20,7 +22,7 @@ for (let i = 0; i < n; i++)
     dashes.push('-');
 }
 
-let uniqueValue = 0;
+let uniqueValue = 10;
 
 for (let i = 0; i < n; i++)
 {
@@ -52,7 +54,6 @@ for (let i = 0; i < n; i++)
     maze.push(row);
 }
 
-printMaze();
 process.stdout.write('\n--------------------\n\n');
 
 // Случайным образом пробиваем стены в лабиринте
@@ -66,13 +67,18 @@ for (let i = 1; i < n - 1; i++)
         {
             if (i % 2 == 1) // с числами
             {
-                maze[i][j + 1] = '?'; 
+                maze[i][j + 1] = 'X';
+                process.stdout.write(`i: ${i};\nj + 1: ${j + 1};\n`);
             }
             else // с разделителями
             {
-                maze[i][j] = '?'; 
+                maze[i][j] = 'Y'; 
+                process.stdout.write(`i: ${i};\nj: ${j};\n`);
+
             }
-        }   
+            printMaze();
+            console.log('da');
+        }
     }
 }
 
@@ -98,4 +104,4 @@ for (let i = 1; i < n - 1; i++)
     }
 }
 
-printMaze();
+// printMaze();
