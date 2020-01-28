@@ -4,7 +4,7 @@ let printMaze = () =>
     {
         for (let column = 0; column < n; column++)
         {
-            process.stdout.write(` ${maze[row][column]} `);
+            process.stdout.write(`${maze[row][column]} `);
         }
     
         process.stdout.write('\n');
@@ -14,7 +14,7 @@ let printMaze = () =>
 }
 
 let maze = [];
-let n = 17;
+let n = 9;
 
 let dashes = [];
 for (let i = 0; i < n; i++)
@@ -63,7 +63,7 @@ for (let i = 1; i < n - 1; i++)
     {    
         let toDeleteWall = Math.floor(Math.random() * (100 - 1) + 1);
 
-        if (toDeleteWall >= 70)
+        if (toDeleteWall >= 50)
         {
             if (i % 2 == 1) // с числами
             {
@@ -75,7 +75,7 @@ for (let i = 1; i < n - 1; i++)
                 maze[i][j] = ' '; 
                 // process.stdout.write(`i: ${i};\nj: ${j};\n`);
             }
-            // printMaze();
+            printMaze();
         }
     }
 }
