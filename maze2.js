@@ -8,7 +8,7 @@ let printArr = (arr) =>
     process.stdout.write('\n');
 }
 
-let n = 6;
+let n = 7;
 
 let arrSets = [];
 let uniqueValue = 0;
@@ -28,7 +28,7 @@ for (let row = 0; row < n; row++)
     {
         let rand = Math.random() * (100 - 1) + 1;
 
-        if (rand >= 50)
+        if (rand >= 60)
         {
             arrSets[elem + 1] = arrSets[elem];
         }
@@ -46,20 +46,10 @@ for (let row = 0; row < n; row++)
         }
     }
 
-    // printArr(arrSets);
-    for (let i = 0; i < n; i++)
-    {
-        if (arrDashes[i] != arrDashes[i - 1])
-        {
-            process.stdout.write('1 ');
-        }
-        else
-        {
-            process.stdout.write('0 ');
-        }
-    }
-    process.stdout.write('\n');
+    printArr(arrSets);
     printArr(arrDashes);
+
+    let lastEl = arrSets[n-1];
 
     for (let i = 0; i < n; i++)
     {
@@ -70,5 +60,9 @@ for (let row = 0; row < n; row++)
         }
     }
     // printArr(arrSets);
-
+    if (arrSets[n-1] == lastEl)
+    {
+        arrSets[n-1] = uniqueValue;
+        uniqueValue++;
+    }
 }
