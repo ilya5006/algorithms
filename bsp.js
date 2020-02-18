@@ -2,10 +2,11 @@ let grid = [];
 
 const SIZE = 25;
 
-let makeBorder = (leftBorder = 0, rightBorder = SIZE - 1, topBorder = 0, bottomBorder = SIZE - 1) =>
+let makeBorder = (leftBorder = 1, rightBorder = SIZE - 1, topBorder = 1, bottomBorder = SIZE - 1) =>
 {
     if (rightBorder - leftBorder <= 6 || bottomBorder - topBorder <= 6)
     {
+        rooms.push([leftBorder, rightBorder, topBorder, bottomBorder]);
         return;
     }
     
@@ -62,6 +63,7 @@ for (let i = 0; i < SIZE; i++)
     }
 }
 
+let rooms = [];
 makeBorder();
 
 for (let i = 0; i < SIZE; i++)
@@ -70,6 +72,16 @@ for (let i = 0; i < SIZE; i++)
     for (let j = 0; j < SIZE; j++)
     {
         tmpStr += grid[i][j] + ' ';
+    }
+    console.log(tmpStr);
+}
+
+for (let i = 0; i < rooms.length; i++)
+{
+    let tmpStr = '';
+    for (let j = 0; j < rooms[i].length; j++)
+    {
+        tmpStr += rooms[i][j] + ' ';
     }
     console.log(tmpStr);
 }
